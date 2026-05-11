@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "research-radar"
+version = "0.1.0"
+description = "Automated domain-specific signal monitor delivering weekly research trend digests for product researchers"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+keywords = ["ux-research", "product-research", "trend-monitoring", "cpr", "computational-product-research"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+    "click>=8.1",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+openai = [
+    "langchain-openai>=0.2",
+    "langchain-community>=0.3",
+    "duckduckgo-search>=6.0",
+]
+anthropic = [
+    "langchain-anthropic>=0.3",
+    "langchain-community>=0.3",
+    "duckduckgo-search>=6.0",
+]
+gemini = [
+    "langchain-google-genai>=2.0",
+    "langchain-community>=0.3",
+    "duckduckgo-search>=6.0",
+]
+llm = [
+    "langchain-openai>=0.2",
+    "langchain-anthropic>=0.3",
+    "langchain-google-genai>=2.0",
+    "langchain-community>=0.3",
+    "duckduckgo-search>=6.0",
+]
+streamlit = [
+    "streamlit>=1.35",
+]
+all = [
+    "langchain-openai>=0.2",
+    "langchain-anthropic>=0.3",
+    "langchain-google-genai>=2.0",
+    "langchain-community>=0.3",
+    "duckduckgo-search>=6.0",
+    "streamlit>=1.35",
+]
+
+[project.scripts]
+research-radar = "research_radar.cli:cli"
+
+[project.urls]
+Homepage = "https://github.com/kgkazakos/research-radar"
+Repository = "https://github.com/kgkazakos/research-radar"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["research_radar*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
