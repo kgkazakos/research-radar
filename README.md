@@ -179,7 +179,7 @@ Signals: 8  |  Generated: 2026-06-27
 
 ## Part of the CPR Ecosystem
 
-`research-radar` is Tool 22 in the [CPR Orbital Series](https://github.com/kgkazakos) — 40 open-source Python tools for AI-native product research infrastructure, shipping every Friday.
+`research-radar` is Tool 22 in the [CPR Orbital Series](https://github.com/kgkazakos) — 40 open-source Python tools for AI-native product research infrastructure.
 
 **Related tools:**
 - [bias-audit](https://github.com/kgkazakos/bias-audit) (Tool 14) — detect interviewer bias across transcript corpora
