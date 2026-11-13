@@ -108,7 +108,7 @@ def _get_llm(backend: str):  # type: ignore[return]
     if backend == "gemini":
         from langchain_google_genai import ChatGoogleGenerativeAI  # type: ignore
 
-        return ChatGoogleGenerativeAI(model="gemini-3.1-pro-preview", temperature=0.3)
+        return ChatGoogleGenerativeAI(model="gemini-4-argon", temperature=0.3)
 
     raise ValueError(f"Unknown LLM backend: {backend!r}. Choose openai, anthropic, or gemini.")
 
